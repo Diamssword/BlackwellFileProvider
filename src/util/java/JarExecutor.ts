@@ -22,7 +22,7 @@ export abstract class JarExecutor<T> {
     protected abstract getJarPath(): string
 
     protected executeJar(vmOptions: string[], ...args: string[]): Promise<T> {
-        console.log([ ...vmOptions,
+        console.log(JavaUtil.getJavaExecutable(),[ ...vmOptions,
             '-jar',
             this.getJarPath(),
             ...args])
