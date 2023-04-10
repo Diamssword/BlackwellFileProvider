@@ -1,5 +1,6 @@
 import express from 'express'
-import 'dotenv/config'
+import * as dotenv from 'dotenv'
+dotenv.config()
 import * as path from 'path'
 import * as fs from 'fs'
 import {initRootCommand,generateDistroCommand} from './helios.js'
