@@ -6,6 +6,7 @@ import * as fs from 'fs'
 import {initRootCommand,generateDistroCommand} from './helios.js'
 const port= process.env.port||3000
 let app=express();
+console.log(process.env)
 process.env.ROOT=path.resolve("packs")
 if(!fs.existsSync(process.env.ROOT))
 {
