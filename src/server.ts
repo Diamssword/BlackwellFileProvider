@@ -14,9 +14,9 @@ if(!fs.existsSync(process.env.ROOT))
     initRootCommand.handler({} as any)
 }
 setInterval(()=>{
-    generateDistroCommand.handler({} as any)
+    generateDistroCommand.handler({name:"pack"} as any)
 },60*1000)//reload toute les minutes
-generateDistroCommand.handler({} as any)
+generateDistroCommand.handler({name:"pack"} as any)
 app.use("/files/",express.static(process.env.ROOT))
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
