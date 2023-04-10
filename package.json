@@ -9,6 +9,7 @@
     "tsc": "tsc",
     "build": "npm run clean && npm run tsc",
     "start": "npm run build && node dist/index.js",
+    "server": "npm run build && node dist/server.js",
     "fs": "node dist/index.js",
     "faststart": "node dist/index.js",
     "lint": "eslint . --ext .js,.ts"
@@ -29,6 +30,7 @@
   },
   "homepage": "https://github.com/dscalzi/Nebula#readme",
   "devDependencies": {
+    "@types/express": "^4.17.17",
     "@types/fs-extra": "^11.0.1",
     "@types/luxon": "^3.2.0",
     "@types/node": "^18.15.3",
@@ -42,6 +44,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "fs-extra": "^11.1.0",
     "got": "^12.6.0",
     "helios-distribution-types": "^1.2.0",
