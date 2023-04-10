@@ -1,5 +1,4 @@
 /* tslint:disable:no-shadowed-variable */
-import dotenv from 'dotenv'
 import { writeFile } from 'fs/promises'
 import { resolve as resolvePath } from 'path'
 import { URL } from 'url'
@@ -14,7 +13,6 @@ import { LoggerUtil } from './util/LoggerUtil.js'
 import { generateSchemas } from './util/SchemaUtil.js'
 import { CurseForgeParser } from './parser/CurseForgeParser.js'
 
-dotenv.config()
 
 const logger = LoggerUtil.getLogger('Index')
 

@@ -1,3 +1,6 @@
+
+import dotenv from 'dotenv'
+dotenv.config()
 import { hideBin } from 'yargs/helpers'
 import yargs from 'yargs/yargs'
 import {initCommand,generateCommand,validateCommand,latestForgeCommand,recommendedForgeCommand,testCommand} from './helios.js'
