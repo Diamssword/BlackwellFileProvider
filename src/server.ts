@@ -6,17 +6,17 @@ import {initRootCommand,generateDistroCommand} from './helios.js'
 const port= process.env.port||3000
 let app=express();
 process.env.ROOT=path.resolve("packs")
-if(!fs.existsSync("packs"))
+if(!fs.existsSync(process.env.ROOT))
 {
     console.log("creating base pack folder")
-    fs.mkdirSync("packs")
+    fs.mkdirSync(process.env.ROOT)
     initRootCommand.handler({} as any)
 }
 setInterval(()=>{
     generateDistroCommand.handler({} as any)
 },60*1000)//reload toute les minutes
 generateDistroCommand.handler({} as any)
-app.use("/files/",express.static("packs"))
+app.use("/files/",express.static(process.env.ROOT))
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
   })
