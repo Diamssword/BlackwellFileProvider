@@ -22,10 +22,6 @@ export abstract class JarExecutor<T> {
     protected abstract getJarPath(): string
 
     protected executeJar(vmOptions: string[], ...args: string[]): Promise<T> {
-        console.log(JavaUtil.getJavaExecutable(),[ ...vmOptions,
-            '-jar',
-            this.getJarPath(),
-            ...args])
         this.lastExecutionResult = undefined!
         return new Promise((resolve, reject) => {
             const child = spawn(JavaUtil.getJavaExecutable(), [
