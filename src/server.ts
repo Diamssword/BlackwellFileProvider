@@ -7,7 +7,6 @@ import {initRootCommand,generateDistroCommand} from './helios.js'
 const port= process.env.port||3000
 let app=express();
 process.env.ROOT=path.resolve("packs")
-console.log(process.env)
 if(!fs.existsSync(process.env.ROOT))
 {
     console.log("creating base pack folder")
